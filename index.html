@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="8.ico" type="image/x-icon">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-size: 18px;
+            margin: 0;
+        }
+        .answer {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answer li {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .answer li:hover {
+            background-color: #f0f0f0;
+        }
+        .correct {
+            color: #4CAF50;
+            border-color: #4CAF50;
+            background-color: #e8f5e9;
+        }
+        .incorrect {
+            color: #f44336;
+            border-color: #f44336;
+            background-color: #ffebee;
+        }
+        .selected {
+            background-color: #e3f2fd;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Repeat this block for each question -->
+
+        <div class="question" id="question-1">
+            <p>1. She __________ (to go) to the store yesterday.</p>
+            <ul class="answer">
+                <li data-value="a">a) goes</li>
+                <li data-value="b">b) went</li>
+                <li data-value="c">c) going</li>
+                <li data-value="d">d) go</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-2">
+            <p>2. I need __________ apple from the fridge.</p>
+            <ul class="answer">
+                <li data-value="a">a) an</li>
+                <li data-value="b">b) the</li>
+                <li data-value="c">c) a</li>
+                <li data-value="d">d) no article</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-3">
+            <p>3. By the time you arrive, I __________ (finish) my homework.</p>
+            <ul class="answer">
+                <li data-value="a">a) will have finished</li>
+                <li data-value="b">b) finished</li>
+                <li data-value="c">c) finish</li>
+                <li data-value="d">d) have finished</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-4">
+            <p>4. She is interested __________ learning new languages.</p>
+            <ul class="answer">
+                <li data-value="a">a) of</li>
+                <li data-value="b">b) for</li>
+                <li data-value="c">c) in</li>
+                <li data-value="d">d) on</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-5">
+            <p>5. This book is __________ (interesting) than the last one.</p>
+            <ul class="answer">
+                <li data-value="a">a) most interesting</li>
+                <li data-value="b">b) more interesting</li>
+                <li data-value="c">c) interestinger</li>
+                <li data-value="d">d) interestest</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-6">
+            <p>6. Alex is a good friend. __________ always helps me with my homework.</p>
+            <ul class="answer">
+                <li data-value="a">a) He</li>
+                <li data-value="b">b) She</li>
+                <li data-value="c">c) It</li>
+                <li data-value="d">d) They</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-7">
+            <p>7. I don’t have __________ money.</p>
+            <ul class="answer">
+                <li data-value="a">a) no money</li>
+                <li data-value="b">b) any money</li>
+                <li data-value="c">c) no money</li>
+                <li data-value="d">d) haven’t money</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-8">
+            <p>8. If it rains, we __________ (stay) at home.</p>
+            <ul class="answer">
+                <li data-value="a">a) stays</li>
+                <li data-value="b">b) will stay</li>
+                <li data-value="c">c) stayed</li>
+                <li data-value="d">d) stay</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-9">
+            <p>9. Choose the synonym for “happy”:</p>
+            <ul class="answer">
+                <li data-value="a">a) Sad</li>
+                <li data-value="b">b) Joyful</li>
+                <li data-value="c">c) Angry</li>
+                <li data-value="d">d) Tired</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-10">
+            <p>10. Choose the antonym for “difficult”:</p>
+            <ul class="answer">
+                <li data-value="a">a) Easy</li>
+                <li data-value="b">b) Hard</li>
+                <li data-value="c">c) Complicated</li>
+                <li data-value="d">d) Complex</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-11">
+            <p>11. A __________ is a place where you can borrow books.</p>
+            <ul class="answer">
+                <li data-value="a">a) library</li>
+                <li data-value="b">b) gym</li>
+                <li data-value="c">c) museum</li>
+                <li data-value="d">d) hospital</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-12">
+            <p>12. The __________ of the car was very high.</p>
+            <ul class="answer">
+                <li data-value="a">a) price</li>
+                <li data-value="b">b) height</li>
+                <li data-value="c">c) weight</li>
+                <li data-value="d">d) length</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-13">
+            <p>13. She __________ (to visit) her grandmother last weekend.</p>
+            <ul class="answer">
+                <li data-value="a">a) visited</li>
+                <li data-value="b">b) visits</li>
+                <li data-value="c">c) visiting</li>
+                <li data-value="d">d) visit</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-14">
+            <p>14. They went on a __________ to Paris.</p>
+            <ul class="answer">
+                <li data-value="a">a) trip</li>
+                <li data-value="b">b) journey</li>
+                <li data-value="c">c) travel</li>
+                <li data-value="d">d) voyage</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-15">
+            <p>15. This puzzle is very __________.</p>
+            <ul class="answer">
+                <li data-value="a">a) challenging</li>
+                <li data-value="b">b) boring</li>
+                <li data-value="c">c) exciting</li>
+                <li data-value="d">d) relaxing</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-16">
+            <p>16. My brother is always __________ when he plays video games.</p>
+            <ul class="answer">
+                <li data-value="a">a) competitive</li>
+                <li data-value="b">b) cooperative</li>
+                <li data-value="c">c) passive</li>
+                <li data-value="d">d) generous</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-17">
+            <p>17. Although it was raining, __________ went for a walk.</p>
+            <ul class="answer">
+                <li data-value="a">a) it</li>
+                <li data-value="b">b) we</li>
+                <li data-value="c">c) they</li>
+                <li data-value="d">d) she</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-18">
+            <p>18. “I can’t wait to see you,” __________ said.</p>
+            <ul class="answer">
+                <li data-value="a">a) he</li>
+                <li data-value="b">b) she</li>
+                <li data-value="c">c) they</li>
+                <li data-value="d">d) she said</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-19">
+            <p>19. She was tired __________ she finished her work.</p>
+            <ul class="answer">
+                <li data-value="a">a) and</li>
+                <li data-value="b">b) so</li>
+                <li data-value="c">c) but</li>
+                <li data-value="d">d) or</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-20">
+            <p>20. Every morning, she takes the dog for a walk __________.</p>
+            <ul class="answer">
+                <li data-value="a">a) in the park</li>
+                <li data-value="b">b) every day</li>
+                <li data-value="c">c) in the morning</li>
+                <li data-value="d">d) every morning</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-21">
+            <p>21. A delicious meal __________ by the chef.</p>
+            <ul class="answer">
+                <li data-value="a">a) is cooked</li>
+                <li data-value="b">b) was cooked</li>
+                <li data-value="c">c) cooks</li>
+                <li data-value="d">d) has cooked</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-22">
+            <p>22. I hope __________ (to see) you soon.</p>
+            <ul class="answer">
+                <li data-value="a">a) to see</li>
+                <li data-value="b">b) seeing</li>
+                <li data-value="c">c) see</li>
+                <li data-value="d">d) seen</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-23">
+            <p>23. This dress is __________ (beautiful) than the one I bought last week.</p>
+            <ul class="answer">
+                <li data-value="a">a) most beautiful</li>
+                <li data-value="b">b) more beautiful</li>
+                <li data-value="c">c) beautifuler</li>
+                <li data-value="d">d) beautifuller</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question-24">
+            <p>24. They __________ (to be) friends for many years.</p>
+            <ul class="answer">
+                <li data-value="a">a) were</li>
+                <li data-value="b">b) are</li>
+                <li data-value="c">c) will be</li>
+                <li data-value="d">d) have been</li>
+            </ul>
+        </div>
+
+        <button onclick="checkAnswers()">Check Answers</button>
+    </div>
+
+    <script>
+        const answers = {
+            "question-1": "b",
+            "question-2": "a",
+            "question-3": "a",
+            "question-4": "c",
+            "question-5": "b",
+            "question-6": "a",
+            "question-7": "b",
+            "question-8": "b",
+            "question-9": "b",
+            "question-10": "a",
+            "question-11": "a",
+            "question-12": "a",
+            "question-13": "a",
+            "question-14": "a",
+            "question-15": "a",
+            "question-16": "a",
+            "question-17": "b",
+            "question-18": "b",
+            "question-19": "b",
+            "question-20": "d",
+            "question-21": "b",
+            "question-22": "a",
+            "question-23": "b",
+            "question-24": "d"
+        };
+
+        function checkAnswers() {
+            document.querySelectorAll('.question').forEach(question => {
+                const selected = question.querySelector('.answer .selected');
+                const correctAnswer = answers[question.id];
+
+                question.querySelectorAll('.answer li').forEach(option => {
+                    if (option.getAttribute('data-value') === correctAnswer) {
+                        option.classList.add('correct');
+                    } else if (option.classList.contains('selected')) {
+                        option.classList.add('incorrect');
+                    }
+                });
+            });
+        }
+
+        document.querySelectorAll('.answer li').forEach(option => {
+            option.addEventListener('click', function() {
+                const question = this.closest('.question');
+                question.querySelectorAll('.answer li').forEach(li => li.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>
